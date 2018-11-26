@@ -1,0 +1,65 @@
+html,
+body {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+.page {
+  background-color: #f8f8f8;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
+}
+
+.page-header {
+  padding: 40px;
+}
+
+.page-body-space {
+  padding: 0 15px;
+}
+
+.page-ft {
+  padding-top: 40px;
+  padding-bottom: 10px;
+  text-align: center;
+  img {
+    height: 19px;
+  }
+}
+
+.page-title {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.page-desc {
+  margin-top: 5px;
+  color: #888888;
+  text-align: left;
+  font-size: 14px;
+}
