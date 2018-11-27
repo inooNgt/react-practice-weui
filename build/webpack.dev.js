@@ -1,13 +1,13 @@
-const webpack = require('webpack')
-const path = require('path')
-const autoprefixer = require('autoprefixer')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack');
+const path = require('path');
+const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const isProduction = process.argv.indexOf('-p') !== -1
+const isProduction = process.argv.indexOf('-p') !== -1;
 
-const examplePath = path.join(__dirname, '../example')
-const buildPath = path.join(__dirname, '../dist/demo')
-const sourcePath = path.join(__dirname, '../src')
+const examplePath = path.join(__dirname, '../example');
+const buildPath = path.join(__dirname, '../dist/demo');
+const sourcePath = path.join(__dirname, '../src');
 
 // Common plugins
 const plugins = [
@@ -21,7 +21,7 @@ const plugins = [
     path: buildPath,
     filename: 'index.html'
   })
-]
+];
 
 // Common rules
 const rules = [
@@ -101,7 +101,7 @@ const rules = [
     test: /\.(png|gif|jpg|svg)$/,
     use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]'
   }
-]
+];
 
 if (isProduction) {
   plugins.push(
@@ -122,16 +122,16 @@ if (isProduction) {
         comments: false
       }
     })
-  )
+  );
 }
 
-const PORT = 9090
+const PORT = 9090;
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
   devtool: isProduction ? false : 'source-map',
   entry: {
-    js: `${examplePath}/app.js`
+    js: ['@babel/polyfill', path.resolve(__dirname, `${examplePath}/app.js`)]
   },
   output: {
     path: buildPath,
@@ -164,4 +164,4 @@ module.exports = {
       'build-started': () => {}
     }
   }
-}
+};
