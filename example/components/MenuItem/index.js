@@ -3,6 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import Cell from 'components/cell';
 
 import './index.scss';
+
 export default class MenuItem extends React.Component {
   static defaultProps = {
     transitionName: 'slide'

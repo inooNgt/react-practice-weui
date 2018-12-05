@@ -12,14 +12,17 @@
   }
 }
 
-.rw-menu-content {
-  transform: translateY(0);
-  transition: 0.3s;
-}
-
 .rw-menu-inner {
   height: 0;
+  overflow: hidden;
+  .rw-menu-content {
+    transform: translateY(-50%);
+    transition: 0.3s;
+  }
   &.slide-enter-done {
     height: auto;
+    .rw-menu-content {
+      transform: translateY(0);
+    }
   }
 }

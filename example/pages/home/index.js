@@ -22,7 +22,17 @@ const menus = [
       { title: 'Slider ' }
     ]
   },
-  { title: '基础组件', icon: IconLayout, items: [] },
+  {
+    title: '基础组件',
+    icon: IconLayout,
+    items: [
+      { title: 'Article' },
+      { title: 'Badge' },
+      { title: 'Flex' },
+      { title: 'Footer' },
+      { title: 'Gallery' }
+    ]
+  },
   { title: '操作反馈', icon: IconFeedback, items: [] },
   { title: '导航相关', icon: IconNav, items: [] },
   { title: '搜索相关', icon: IconSearch, items: [] },
