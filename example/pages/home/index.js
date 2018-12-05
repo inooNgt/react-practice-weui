@@ -7,7 +7,7 @@ import IconNav from './images/icon_nav_nav.png';
 import IconSearch from './images/icon_nav_search.png';
 import IconZIndex from './images/icon_nav_z-index.png';
 
-import MenuItem from 'egComponents/MenuItem';
+import MenuItem from 'egComponents/menuitem';
 
 import './index.scss';
 

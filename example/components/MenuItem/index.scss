@@ -11,3 +11,15 @@
     height: 30px;
   }
 }
+
+.rw-menu-content {
+  transform: translateY(0);
+  transition: 0.3s;
+}
+
+.rw-menu-inner {
+  height: 0;
+  &.slide-enter-done {
+    height: auto;
+  }
+}
