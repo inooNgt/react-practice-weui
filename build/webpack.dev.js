@@ -127,11 +127,13 @@ if (isProduction) {
 
 const PORT = 9090;
 
+const resolve = p => path.resolve(__dirname, p);
+
 module.exports = {
   mode: isProduction ? 'production' : 'development',
   devtool: isProduction ? false : 'source-map',
   entry: {
-    js: ['@babel/polyfill', path.resolve(__dirname, `${examplePath}/app.js`)]
+    js: ['@babel/polyfill', resolve(`${examplePath}/app.js`)]
   },
   output: {
     path: buildPath,
@@ -149,7 +151,11 @@ module.exports = {
       '.js',
       '.jsx',
       '.scss'
-    ]
+    ],
+    alias: {
+      egComponents: resolve('../example/components'),
+      components: resolve('../src/components')
+    }
   },
   plugins,
   serve: {

@@ -1,0 +1,13 @@
+.rw-menu-item {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  .menu-title {
+    flex: 1;
+  }
+  .menu-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
