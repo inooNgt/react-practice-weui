@@ -19,7 +19,7 @@
     transform: translateY(-50%);
     transition: 0.3s;
   }
-  &.slide-enter-done {
+  &.slide-menu-enter-done {
     height: auto;
     .rw-menu-content {
       transform: translateY(0);

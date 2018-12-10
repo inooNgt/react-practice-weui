@@ -6,27 +6,30 @@ import './index.scss';
 
 export default class MenuItem extends React.Component {
   static defaultProps = {
-    transitionName: 'slide'
+    transitionName: 'slide-menu'
   };
   state = {
-    showItems: false
+    showItems: false,
+    itemOpacity: 1
   };
   handleClick() {
-    this.setState(
-      {
-        showItems: !this.state.showItems
-      },
-      () => {
-        console.log('showItems:', this.state.showItems);
-      }
-    );
+    this.setState(state => {
+      return {
+        showItems: !state.showItems,
+        itemOpacity: state.showItems ? 1 : 0.4
+      };
+    });
   }
   render() {
     let { menu, transitionName } = this.props;
-    let { showItems } = this.state;
+    let { showItems, itemOpacity } = this.state;
     return (
       <div>
-        <div className='rw-menu-item' onClick={this.handleClick.bind(this)}>
+        <div
+          className='rw-menu-item'
+          style={{ opacity: itemOpacity, transition: 'opacity 0.3s' }}
+          onClick={this.handleClick.bind(this)}
+        >
           <p className='menu-title'>{menu.title}</p>
           <img className='menu-icon' src={menu.icon} />
         </div>
@@ -39,7 +42,7 @@ export default class MenuItem extends React.Component {
           <div className='rw-menu-inner'>
             <div className='rw-menu-content'>
               {menu.items.map((item, index) => (
-                <Cell title={item.title} key={index} />
+                <Cell title={item.title} path={item.path} key={index} />
               ))}
             </div>
           </div>

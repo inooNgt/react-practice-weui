@@ -6,7 +6,6 @@ import IconFeedback from './images/icon_nav_feedback.png';
 import IconNav from './images/icon_nav_nav.png';
 import IconSearch from './images/icon_nav_search.png';
 import IconZIndex from './images/icon_nav_z-index.png';
-
 import MenuItem from 'egComponents/menuitem';
 
 import './index.scss';
@@ -16,7 +15,7 @@ const menus = [
     title: '表单',
     icon: IconForm,
     items: [
-      { title: 'Button' },
+      { title: 'Button', path: '/buttons' },
       { title: 'Input' },
       { title: 'List' },
       { title: 'Slider ' }
