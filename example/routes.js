@@ -10,7 +10,7 @@ const routes = [
     path: '/buttons',
     component: asyncComponent(() => import('./pages/buttons'))
   },
-  { path: '/msg', component: asyncComponent(() => import('./pages/msg')) },
-  { path: '/', component: asyncComponent(() => import('./pages/toast')) }
+  { path: '/msg', component: asyncComponent(() => import('./pages/msg')) }
 ];
+
 export default routes;

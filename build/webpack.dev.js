@@ -2,9 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const history = require('connect-history-api-fallback');
+const convert = require('koa-connect');
 
 const isProduction = process.argv.indexOf('-p') !== -1;
-
 const examplePath = path.join(__dirname, '../example');
 const buildPath = path.join(__dirname, '../dist/demo');
 const sourcePath = path.join(__dirname, '../src');
@@ -158,6 +159,7 @@ module.exports = {
     }
   },
   plugins,
+  /* https://github.com/webpack-contrib/webpack-serve */
   serve: {
     port: PORT,
     dev: {
@@ -165,6 +167,9 @@ module.exports = {
     },
     hot: {
       logLevel: 'warn'
+    },
+    add: (app, middleware, options) => {
+      app.use(convert(history({})));
     },
     on: {
       'build-started': () => {}
