@@ -10,7 +10,6 @@ const App = (props, context) => (
   <Router>
     <Route
       render={({ location }) => {
-        console.log('location', location);
         return (
           <TransitionGroup>
             <CSSTransition key={location.key} classNames='fade' timeout={300}>
