@@ -155,7 +155,9 @@ module.exports = {
     ],
     alias: {
       egComponents: resolve('../example/components'),
-      components: resolve('../src/components')
+      components: resolve('../src/components'),
+      src: resolve('../src'),
+      style: resolve('../src/style')
     }
   },
   plugins,
