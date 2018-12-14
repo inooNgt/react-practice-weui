@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import routes from './routes';
 
+import 'weui';
 import './style/style.scss';
 
 const App = (props, context) => (

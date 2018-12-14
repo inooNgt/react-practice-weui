@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
-import './index.scss';
+import LoadingComponent from 'components/loading';
 
 class Button extends React.Component {
   static propTypes = {
     disabled: PropTypes.bool,
+    loading: PropTypes.bool,
     /**
      * Options: primary, default, warn, vcode
      *
@@ -21,6 +21,7 @@ class Button extends React.Component {
 
   static defaultProps = {
     disabled: false,
+    loading: false,
     type: 'primary',
     size: 'normal'
   };
@@ -33,6 +34,7 @@ class Button extends React.Component {
       plain,
       className,
       children,
+      loading,
       ...others
     } = this.props;
     const Component = component ? component : this.props.href ? 'a' : 'button';
@@ -40,6 +42,7 @@ class Button extends React.Component {
       'weui-btn': true,
       'weui-btn_warn': type === 'warn',
       'weui-btn_mini': size === 'small',
+      'weui-btn_loading': loading,
       'weui-btn_primary': type === 'primary' && !plain,
       'weui-btn_default': type === 'default' && !plain,
       'weui-btn_plain-primary': type === 'primary' && plain,
@@ -51,6 +54,7 @@ class Button extends React.Component {
 
     return (
       <Component {...others} className={classes}>
+        {loading ? <LoadingComponent /> : null}
         {children}
       </Component>
     );
