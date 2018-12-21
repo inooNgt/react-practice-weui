@@ -1,0 +1,14 @@
+.button-sp-area {
+  margin: 0 auto;
+  padding: 15px 0;
+  width: 60%;
+}
+.button-sp-area-small {
+  @extend .button-sp-area;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0;
+  .weui-btn {
+    margin: 0;
+  }
+}
